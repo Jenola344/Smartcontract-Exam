@@ -6,7 +6,7 @@ import "../src/SwapExecutor.sol";
 
 /// @dev Mock router that pretends to swap and returns a fixed USDC amount
 contract MockRouter {
-    address public WETH = address(0xWETH);
+    address public WETH = address(0x1);
 
     function swapExactETHForTokens(
         uint,
@@ -27,7 +27,7 @@ contract SwapExecutorTest is Test {
 
     function setUp() public {
         mockRouter = new MockRouter();
-        executor   = new SwapExecutor(address(mockRouter), address(0xUSDC));
+        executor = new SwapExecutor(address(mockRouter), address(0x2));
         vm.deal(user, 1 ether);
     }
 
