@@ -6,9 +6,9 @@ import "../src/SwapExecutor.sol";
 
 contract ExecuteSwap is Script {
     function run() external {
-        SwapExecutor executor = SwapExecutor(vm.envAddress("EXECUTOR_ADDRESS"));
+        SwapExecutor executor =;
 
-        vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
+        vm.startBroadcast();
 
         uint256 id = executor.createSwap{value: 0.01 ether}(1e6);
         executor.executeSwap(id);

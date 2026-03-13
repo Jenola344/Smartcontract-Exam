@@ -27,7 +27,7 @@ forge test --fork-url $SEPOLIA_RPC_URL -vvv
 
 # 4. Deploy + auto-verify
 forge script script/DeploySwapExecutor.s.sol:DeploySwapExecutor \
-  --$SEPOLIA_RPC_URL --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY -vvvv
+  --0xf405a8a0e6a4663da4e6a68200c450055c0a16e4d324855069ac8145953d34a1 --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY -vvvv
 
 # 5. Execute a live swap (save the tx hash for submission)
 EXECUTOR_ADDRESS=0x... forge script script/ExecuteSwap.s.sol:ExecuteSwap \
